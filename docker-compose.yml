@@ -1,0 +1,16 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      SERVER_ADDRESS: "0.0.0.0:8080"
+      POSTGRES_CONN: "postgres://cnrprod1725728503-team-77203:cnrprod1725728503-team-77203@rc1b-5xmqy6bq501kls4m.mdb.yandexcloud.net:6432/cnrprod1725728503-team-77203?sslmode=disable"
+      POSTGRES_JDBC_URL: "jdbc:postgresql://rc1b-5xmqy6bq501kls4m.mdb.yandexcloud.net:6432/cnrprod1725728503-team-77203"
+      POSTGRES_USERNAME: "cnrprod1725728503-team-77203"
+      POSTGRES_PASSWORD: "cnrprod1725728503-team-77203"
+      POSTGRES_HOST: "rc1b-5xmqy6bq501kls4m.mdb.yandexcloud.net"
+      POSTGRES_PORT: "6432"
+      POSTGRES_DATABASE: "cnrprod1725728503-team-77203"
+    volumes:
+      - ./migrations:/app/migrations
